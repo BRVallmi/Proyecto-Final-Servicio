@@ -18,7 +18,7 @@
                 $_SESSION['alumno'] = $data['ipAlumno'];
                 setcookie('session', hash('sha512',$user), time() + (86400 * 30), "/");
                 // Esta funcion arrancara todos los dockers del alumno
-                startDocker($data['IPCurso'],$data['ipAlumno'],$user,$_SERVER["REMOTE_ADDR"],1);
+                startDocker($data['IPCurso'],$data['ipAlumno'],$user,$_SERVER["REMOTE_ADDR"]);
                 header("Location: panel/index.php");
                 exit();
             }

@@ -16,12 +16,15 @@
     <title>Panel</title>
 </head>
 <body>
-    <?=showObject($_SESSION['course'],$_SESSION['alumno'])?>
+    <?=showObject($_SESSION['course'],$_SESSION['alumno'],$_SESSION['user'])?>
 </body>
 </html>
 <script>
-window.addEventListener('unload', function() {
+window.addEventListener('unload', function(){
     document.cookie = 'session=; Max-Age=0; path=/';
     navigator.sendBeacon('logout.php');
 });
+function openWindow(url) {
+  window.open(url, '_blank');
+};
 </script>

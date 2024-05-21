@@ -62,25 +62,31 @@ CREATE TABLE IF NOT EXISTS `Curso_software` (
 );
 INSERT INTO Curso (Nombre, Año, ipCurso) VALUES 
     ('ASIX1', '2024', '192.168.10.21'),
-    ('DAM1', '2024', '10.0.0.5');
+    ('DAM1', '2024', '192.168.10.31'),
+    ('ADMIN', '2024', '192.168.10.14');
 
 INSERT INTO Usuarios (Nombre, Apellidos, DNI, Correo, Usuario, Contraseña, Roles, ipAlumno) VALUES 
     ('Juan', 'González Pérez', '123456789', 'juan@example.com', 'juang', '$2y$10$dHLqRiK4VFeq.YoqIkwRmOKQEbkIBsgf90wDXfCvm8SnOgv3JNnxu', 'Alumnos', '192.168.10.22'),
     ('María', 'López Martínez', '987654321', 'maria@example.com', 'marial', '$2y$10$dHLqRiK4VFeq.YoqIkwRmOKQEbkIBsgf90wDXfCvm8SnOgv3JNnxu', 'Alumnos', '192.168.10.23'),
-    ('Pedro', 'Sánchez Rodríguez', '456789123', 'pedro@example.com', 'pedros', '$2y$10$dHLqRiK4VFeq.YoqIkwRmOKQEbkIBsgf90wDXfCvm8SnOgv3JNnxu', 'Alumnos', '10.0.4.2');
+    ('Pedro', 'Sánchez Rodríguez', '456789123', 'pedro@example.com', 'pedros', '$2y$10$dHLqRiK4VFeq.YoqIkwRmOKQEbkIBsgf90wDXfCvm8SnOgv3JNnxu', 'Alumnos', '192.168.10.32'),
+    ('Admin', 'Admin Admin', '45678234', 'profe@example.com', 'admin', '$2y$10$dHLqRiK4VFeq.YoqIkwRmOKQEbkIBsgf90wDXfCvm8SnOgv3JNnxu', 'Profesores', '192.168.10.14');
 
 INSERT INTO Software (Nombre, repVersion, puerto) VALUES 
     ('VSCODE', '1.0','3000'),
-    ('VSCODE', '1.5','3000'),
-    ('MYSQL', '8.1','3306');
+    ('MYSQL', '8.1','8080'),
+    ('PORTAINER', '1.0','9000')
+    ('UBUNTU', '1.0','6080');
+
 
 INSERT INTO Curso_usuario (idCurso, idUsuario) VALUES 
     (1, 1), -- Juan en ASIX1
     (1, 2), -- María en ASIX1
+    (3, 4), -- Admin en ADMIN
     (2, 3); -- Pedro en DAM1
 
 INSERT INTO Curso_software (idCurso, idSoftware) VALUES 
     (1, 1), -- VSCODE en ASIX1
-    (1, 3), -- MYSQL en ASIX1
-    (2, 1), -- VSCODE en DAM1
-    (2, 3); -- MYSQL en DAM1
+    (1, 2), -- MYSQL en ASIX1
+    (1, 4), -- UBUNTU en ASIX1
+    (3, 3), -- PORTAINER en ADMIN
+    (2, 1); -- VSCODE en DAM1
