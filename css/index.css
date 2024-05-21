@@ -1,0 +1,144 @@
+*{
+  margin:0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  min-height: 100%;/* fill the screen height to allow vertical alignement */
+  display: grid; /* display:flex works too since body is the only grid cell */
+}
+
+body {
+  margin: auto;
+  background-image: url("../img/wallpaper.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  width: 100vw;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iconoEmpresa {
+  width: 10em;
+  height: 10em;
+  background-image: url('../img/ClassWaveManagment_Logo.png');
+}
+
+#container-form{
+  padding: 1em;
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 0.6em;
+  box-shadow: 0 4px 16px 0 rgba(0, 208, 255, 1), 0 6px 20px 0 rgba(0, 208, 255, 0.2);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: url('../img/white.png');
+  /* backdrop-filter: blur(5px); */
+}
+
+
+#container-form h1{
+  flex: 1;
+}
+
+#container-form form{
+  flex: 4;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.2em;
+  margin-bottom: 0.4em;
+  justify-content: center;
+  color: aliceblue;
+}
+
+.logoInput {
+  position: relative;
+}
+
+#logoProfile {
+  max-height: 1.5em;
+  max-width: 1.5em;
+  position: absolute;
+  top: 0.25em;
+  right: 0.8em;
+}
+
+input {
+  flex: 1;
+
+  margin: 0.25em;
+  padding-left: 0.5em;
+  padding-right: 2.5em;
+  
+  min-height: 2em;
+
+  border-radius: 1em;
+}
+
+span {
+  color: red;
+  font-size: 0.8em;
+}
+
+
+.passuser {
+  width: auto;
+  margin-top: 0.2em;
+}
+
+.passuser:hover {
+  border: solid 2px red;
+}
+
+
+#button {
+  padding: 0; /*! Resetea el padding de los inputs */
+  margin-top: 1em;
+  min-height: 2em;
+  width: 35%;
+
+  background-color: rgb(131, 188, 254);
+}
+
+.docker{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em;
+  padding: 1em;
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 0.6em;
+  box-shadow: 0 4px 16px 0 rgba(0, 208, 255, 1), 0 6px 20px 0 rgba(0, 208, 255, 0.2);
+  background: url('../img/white.png');
+}
+
+.docker a{
+  text-decoration: none;
+  color: white;
+  margin-left: 10px; /* Ajusta el margen izquierdo para separar la imagen del texto */
+}
+
+.docker img{
+  width: 80px; /* Tamaño considerable para la imagen */
+  height: auto; /* Para mantener la proporción */
+}
+
+.docker:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
