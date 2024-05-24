@@ -18,13 +18,12 @@ function startDocker($ipCurso,$ipAlumno,$user,$ipClient,$session = TRUE){
     }
     
     // Ejecutar script Docker
-    if($session != TRUE){
+    if($session == TRUE){
         $ssh->write("sudo sh docker.sh $user $ipAlumno \n");
         $output = $ssh->read('/.*[pP]assword.*:/');
         $ssh->write("$password\n");
         $output .= $ssh->read();
     }
-    sleep(2);
     // Ejecutar Script Iptables
     $session == TRUE ? $ssh->write("sudo sh iptables.sh true $ipCurso $ipAlumno $ipClient \n") : $ssh->write("sudo sh iptables.sh false $ipCurso $ipAlumno $ipClient \n");
     $output = $ssh->read('/.*[pP]assword.*:/');
