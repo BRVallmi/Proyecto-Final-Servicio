@@ -2,7 +2,7 @@
 // Incluir la biblioteca phpseclib
 use phpseclib3\Net\SSH2;
 require 'vendor/autoload.php';
-function startDocker($ipCurso,$ipAlumno,$user,$ipClient){
+function startDocker($ipCurso,$ipAlumno,$user,$ipClient,$session = TRUE){
     // Configurar los datos de conexión SSH
     $host = $ipCurso;
     $port = 22; // Puerto SSH
@@ -18,19 +18,19 @@ function startDocker($ipCurso,$ipAlumno,$user,$ipClient){
     }
     
     // Ejecutar script Docker
-    $ssh->write("sudo sh docker.sh $user $ipAlumno \n");
-    $output = $ssh->read('/.*[pP]assword.*:/');
-    $ssh->write("$password\n");
-    $output .= $ssh->read();
-
+    if(!isset($session)){
+        $ssh->write("sudo sh docker.sh $user $ipAlumno \n");
+        $output = $ssh->read('/.*[pP]assword.*:/');
+        $ssh->write("$password\n");
+        $output .= $ssh->read();
+    }
     sleep(2);
-
     // Ejecutar Script Iptables
-    $ssh->write("sudo sh iptables.sh true $user $ipAlumno $ipClient \n");
+    isset($session) ? $ssh->write("sudo sh iptables.sh true $ipCurso $ipAlumno $ipClient \n") : $ssh->write("sudo sh iptables.sh false $ipCurso $ipAlumno $ipClient \n");
     $output = $ssh->read('/.*[pP]assword.*:/');
     $ssh->write("$password\n");
     $output .= $ssh->read();
-
+ 
     echo $output;
 }
 ?>
