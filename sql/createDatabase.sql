@@ -74,7 +74,8 @@ INSERT INTO Usuarios (Nombre, Apellidos, DNI, Correo, Usuario, Contraseña, Role
 INSERT INTO Software (Nombre, repVersion, puerto) VALUES 
     ('VSCODE', '1.0','3000'),
     ('MYSQL', '8.1','8080'),
-    ('PORTAINER', '1.0','9000')
+    ('PORTAINER', '1.0','9000'),
+    ('KALI', '1.0','9020'),
     ('UBUNTU', '1.0','6080');
 
 
@@ -87,6 +88,7 @@ INSERT INTO Curso_usuario (idCurso, idUsuario) VALUES
 INSERT INTO Curso_software (idCurso, idSoftware) VALUES 
     (1, 1), -- VSCODE en ASIX1
     (1, 2), -- MYSQL en ASIX1
-    (1, 4), -- UBUNTU en ASIX1
+    (1, 4), -- KALI en ASIX1
+    (1, 5), -- UBUNTU en ASIX1
     (3, 3), -- PORTAINER en ADMIN
     (2, 1); -- VSCODE en DAM1
