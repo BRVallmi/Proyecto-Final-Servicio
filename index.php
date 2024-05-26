@@ -38,11 +38,13 @@
 </head>
 <body>
     <main>
+        <div id="overlay" class="overlay"></div>
+        <div id="loader" class="loader hidden"></div>
         <div id="container-form">
             <img src="./img/LogoV2.png" alt="Logo ClassWave" id="iconoEmpresa">
             <h1>Login</h1>
             <?php if(isset($error)) { echo "<span>".$error."</span>"; }?>
-            <form method="post">
+            <form method="post" id="login-form" onsubmit="showLoader()">
                 <div class="logoInput">
                     <img src="./img/profile.png" alt="logoProfile" id="logoProfile">
                     <input type="text" name="name" class="passuser" placeholder="Username" value="<?= isset($user) ? $user : "";?>">
@@ -56,4 +58,11 @@
         </div>
     </main>
 </body>
+<script>
+        function showLoader() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('loader').classList.remove('hidden');
+            document.getElementById('login-form').classList.add('form-hidden');
+        }
+    </script>
 </html>
