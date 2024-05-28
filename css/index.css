@@ -149,6 +149,7 @@ span {
 }
 
 .docker{
+  width: 10em;
   margin: 1em;
   padding: 1em;
   border: solid 1px rgb(255, 255, 255);
