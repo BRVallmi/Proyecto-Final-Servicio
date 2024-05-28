@@ -172,8 +172,8 @@ span {
 
 .loader {
   position: fixed;
-  left: 50%;
-  top: 50%;
+  left: 45%;
+  top: 38%;
   transform: translate(-50%, -50%);
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -182,6 +182,12 @@ span {
   height: 120px;
   animation: spin 2s linear infinite;
   z-index: 1001;
+}
+
+@media screen and (max-width: 600px) {
+  .loader {
+    left: 33%;
+  }
 }
 
 @keyframes spin {
