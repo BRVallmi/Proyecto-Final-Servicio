@@ -82,7 +82,7 @@ INSERT INTO Software (Nombre, repVersion, puerto) VALUES
 INSERT INTO Curso_usuario (idCurso, idUsuario) VALUES 
     (1, 1), -- Juan en ASIX1
     (1, 2), -- María en ASIX1
-    (3, 4), -- Admin en ADMIN
+    (1, 4), -- Admin en ADMIN
     (2, 3); -- Pedro en DAM1
 
 INSERT INTO Curso_software (idCurso, idSoftware) VALUES 
