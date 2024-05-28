@@ -76,7 +76,7 @@ INSERT INTO Software (Nombre, repVersion, puerto) VALUES
     ('MYSQL', '8.1','8080'),
     ('PORTAINER', '1.0','9000'),
     ('KALI', '1.0','9020'),
-    ('UBUNTU', '1.0','6080');
+    ('UBUNTU', '1.0','9090');
 
 
 INSERT INTO Curso_usuario (idCurso, idUsuario) VALUES 
