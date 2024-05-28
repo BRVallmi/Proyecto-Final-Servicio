@@ -25,7 +25,7 @@ function startDocker($ipCurso,$ipAlumno,$user,$ipClient,$session = TRUE){
         $output .= $ssh->read();
     }
     // Ejecutar Script Iptables
-    $session == TRUE ? $ssh->write("sudo sh iptables.sh true $ipCurso $ipAlumno $ipClient \n") : $ssh->write("sudo sh iptables.sh false $ipCurso $ipAlumno $ipClient \n");
+    $session == TRUE ? $ssh->write("sudo sh iptables.sh true $user $ipAlumno $ipClient \n") : $ssh->write("sudo sh iptables.sh false $user $ipAlumno $ipClient \n");
     $output = $ssh->read('/.*[pP]assword.*:/');
     $ssh->write("$password\n");
     $output .= $ssh->read();

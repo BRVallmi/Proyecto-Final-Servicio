@@ -15,7 +15,7 @@
         }finally{
             if($object){
                 foreach($object as $foo){
-                    $url      = "http://".$user.".classwave.es:".$foo['puerto'];
+                    $url = "http://".$user.".classwave.es:".$foo['puerto'].($foo['puerto'] == '9020' ? "/vnc.html" : "");
                     $display  = "<div class='docker'>";
                     $display .= "<a href='#' onclick='openWindow(\"$url\")'>";
                     $display .= "<img src='../lib/software/".$foo['Nombre'].".png' alt='".$foo['Nombre']."'>";
