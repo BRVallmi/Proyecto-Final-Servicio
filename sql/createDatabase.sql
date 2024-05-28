@@ -87,10 +87,18 @@ INSERT INTO Curso_usuario (idCurso, idUsuario) VALUES
     (2, 3); -- Pedro en DAM1
 
 INSERT INTO Curso_software (idCurso, idSoftware) VALUES 
+    /* ASIX */
     (1, 1), -- VSCODE en ASIX1
     (1, 2), -- MYSQL en ASIX1
     (1, 4), -- KALI en ASIX1
     (1, 5), -- UBUNTU en ASIX1
     (1, 6), -- MAILHOG en ASIX1
-    (3, 3), -- PORTAINER en ADMIN
+    /* DAM */
     (2, 1); -- VSCODE en DAM1
+    /* ADMIN */
+    (3, 1), -- VSCODE en ASIX1
+    (3, 2), -- MYSQL en ASIX1
+    (3, 3), -- PORTAINER en ADMIN
+    (3, 4), -- KALI en ASIX1
+    (3, 5), -- UBUNTU en ASIX1
+    (3, 6), -- MAILHOG en ASIX1
