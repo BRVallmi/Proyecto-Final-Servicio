@@ -14,6 +14,7 @@
             $object = false;
         }finally{
             if($object){
+                echo "<div id='mainContainDocker'>";
                 foreach($object as $foo){
                     $url      = "http://".$user.".classwave.es:".$foo['puerto'].($foo['puerto'] == '9020' || $foo['puerto'] == '9090' ? "/vnc.html" : "");
                     $display  = "<div class='docker'>";
@@ -24,6 +25,7 @@
                     $display .= "</div>";
                     echo $display;
                 }
+                echo "</div>";
             }   
         }
     }

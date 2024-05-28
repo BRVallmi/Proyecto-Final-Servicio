@@ -140,9 +140,16 @@ span {
   background-color: #00ddff;
 }
 
-.docker{
+#mainContainDocker {
+  width: 50%;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.docker{
+  min-width: 11em;
   margin: 1em;
   padding: 1em;
   border: solid 1px rgb(255, 255, 255);
