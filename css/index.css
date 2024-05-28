@@ -142,7 +142,7 @@ span {
 
 .docker{
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   margin: 1em;
   padding: 1em;
   border: solid 1px rgb(255, 255, 255);
