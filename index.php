@@ -38,11 +38,13 @@
 </head>
 <body>
     <main>
+        <div id="wave-container">
+            <object type="image/svg+xml" data="./css/waves.svg" id="wave-1"></object>
+        </div>
         <div id="overlay" class="overlay"></div>
         <div id="loader" class="loader hidden"></div>
         <div id="container-form">
             <img src="./img/LogoV2.png" alt="Logo ClassWave" id="iconoEmpresa">
-            <h1>Login</h1>
             <?php if(isset($error)) { echo "<span>".$error."</span>"; }?>
             <form method="post" id="login-form" onsubmit="showLoader()">
                 <div class="logoInput">
@@ -53,10 +55,11 @@
                     <img src="./img/key.png" alt="logoProfile" id="logoProfile">
                     <input type="password" name="password" class="passuser" placeholder="Password">
                 </div>
-                <input type="submit" value="Enviar" id="button">
+                <button id="botonLogin">Enviar</button>
             </form>
         </div>
     </main>
+    
 </body>
 <script>
         function showLoader() {

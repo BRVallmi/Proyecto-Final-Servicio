@@ -16,6 +16,9 @@
     <title>Panel</title>
 </head>
 <body>
+    <div id="wave-container">
+        <object type="image/svg+xml" data="../css/waves.svg" id="wave-1"></object>
+    </div>
     <?=showObject($_SESSION['course'],$_SESSION['alumno'],$_SESSION['user'])?>
 </body>
 </html>
