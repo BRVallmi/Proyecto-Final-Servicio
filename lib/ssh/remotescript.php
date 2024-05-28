@@ -19,7 +19,14 @@ function startDocker($ipCurso,$ipAlumno,$user,$ipClient,$session = TRUE){
     
     // Ejecutar script Docker
     if($session == TRUE){
-        $ssh->write("sudo sh docker.sh $user $ipAlumno \n");
+        $ssh->write("sudo sh docker.sh $user $ipAlumno false \n");
+        // false (ssh) iniciar
+        $output = $ssh->read('/.*[pP]assword.*:/');
+        $ssh->write("$password\n");
+        $output .= $ssh->read();
+    }else{
+        $ssh->write("sudo sh docker.sh $user $ipAlumno true \n");
+        // true (ssh) detener
         $output = $ssh->read('/.*[pP]assword.*:/');
         $ssh->write("$password\n");
         $output .= $ssh->read();
